@@ -139,7 +139,10 @@ export default function Home({ onNavigate, onLogout }: HomeProps) {
           <span className="nav-icon">💝</span>
           <span className="nav-label">Donate</span>
         </button>
-        <button className="nav-item">
+        <button 
+          className="nav-item"
+          onClick={() => onNavigate('career')}
+        >
           <span className="nav-icon">💼</span>
           <span className="nav-label">Career</span>
         </button>
