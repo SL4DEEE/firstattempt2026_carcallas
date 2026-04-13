@@ -11,10 +11,8 @@ export default function Login({ onLogin }: LoginProps) {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
-    if (email && password) {
-      console.log('Login attempt:', { email, password })
-      onLogin()
-    }
+    console.log('Login attempt:', { email, password })
+    onLogin()
   }
 
   const handleBiometricLogin = () => {
