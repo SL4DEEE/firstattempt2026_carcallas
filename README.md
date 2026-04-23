@@ -12,7 +12,7 @@ To replicate and run this project follow the following steps using Windows Power
 winget install OpenJS.NodeJS.LTS
 nvm install lts
 nvm use lts
-git clone https://github.com/your-username/firstattempt2026_carcallas
+git clone https://github.com/SL4DEEE/firstattempt2026_carcallas
 cd vite-project
 npm install
 npm run dev
@@ -21,7 +21,16 @@ npm run dev
 ### AI Tools:
 1. Claude (Agent Mode) using Haiku 4.5
 
-### Prompt:
+### Prompt 1:
+```
+Create a master prompt for this project based on the following instructions:
+(1) Generating a valid manifest.json (with University Branding).
+(2) Registering a Service Worker.
+(3) Implementing Caching Strategies so the app loads instantly and works offline.
+(4) Managing the App Icons (using the assets provided in the Branding Kit).
+```
+### Prompt 2:
+
 ```
 You are an expert frontend developer. I have a Vite + Vue 3 project using
 JavaScript and the Composition API (<script setup>). Your job is to fully
@@ -66,7 +75,7 @@ throw errors.
 --- TASK 6: Rewrite README.md ---
 Overwrite the entire README.md file using exactly this structure and format:
 
-## [Your Last Name]
+## Carcallas
 
 #### Framework: Vite + Vue 3
 
@@ -104,9 +113,21 @@ Hallucinations / Manual Fixes:
 - [List any errors or incorrect suggestions made by the AI that had to be fixed manually]
 
 #### Screenshots
-[Place screenshots of the installed PWA and the DevTools Application tab
-inside an /images folder in the root directory and display them here
-using markdown image syntax]
+
+**Home Page - Light Theme with White Background**
+![Home Page ](./images/Screenshot%202026-04-24%20024317.png)
+
+**Alumni Network Dashboard**
+![Alumni Network Dashboard](./images/Screenshot%202026-04-24%20024325.png)
+
+**Donation Hub**
+![Donation Hub Page](./images/Screenshot%202026-04-24%20024331.png)
+
+**Career Opportunities**
+![Career Opportunities Dashboard](./images/Screenshot%202026-04-24%20024336.png)
+
+**Academic Records**
+![Academic Records and Documents](./images/Screenshot%202026-04-24%20024342.png)
 
 --- TASK 7: Verify ---
 After completing all tasks, run: npm run build
@@ -126,7 +147,7 @@ Files created or modified:
 - `README.md` (modified)
 
 Hallucinations / Manual Fixes:
-- None - All tasks completed successfully without manual fixes required
+- No hallucinations - All tasks completed successfully
 - vite-plugin-pwa installation required `--legacy-peer-deps` flag due to Vite 8.x compatibility
 - Python script approach used for icon generation due to cross-platform compatibility
 
