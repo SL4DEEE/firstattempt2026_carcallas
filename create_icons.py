@@ -1,29 +1,31 @@
 #!/usr/bin/env python3
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image
+import os
 
 # Create icons directory
-import os
 os.makedirs('public/icons', exist_ok=True)
 
-# ADDU brand blue color
-brand_color = '#003087'
+# Load the ADDU Nation logo
+logo = Image.open('public/icons/addunation logo.png')
+
+# Ensure the logo is in RGBA mode for transparency handling
+if logo.mode != 'RGBA':
+    logo = logo.convert('RGBA')
 
 # Create 192x192 icon
-img_192 = Image.new('RGB', (192, 192), color=brand_color)
-draw_192 = ImageDraw.Draw(img_192)
-# Draw a simple circle to represent the icon
-draw_192.ellipse([(30, 30), (162, 162)], fill='white', outline='white')
-draw_192.text((70, 85), 'ADDU', fill=brand_color)
-img_192.save('public/icons/icon-192x192.png')
+icon_192 = Image.new('RGBA', (192, 192), (255, 255, 255, 0))
+# Calculate position to center the logo
+logo_192 = logo.resize((192, 192), Image.Resampling.LANCZOS)
+icon_192.paste(logo_192, (0, 0), logo_192)
+icon_192.save('public/icons/icon-192x192.png')
 print('Created icon-192x192.png')
 
 # Create 512x512 icon
-img_512 = Image.new('RGB', (512, 512), color=brand_color)
-draw_512 = ImageDraw.Draw(img_512)
-# Draw a simple circle to represent the icon
-draw_512.ellipse([(50, 50), (462, 462)], fill='white', outline='white')
-draw_512.text((220, 240), 'ADDU', fill=brand_color)
-img_512.save('public/icons/icon-512x512.png')
+icon_512 = Image.new('RGBA', (512, 512), (255, 255, 255, 0))
+# Calculate position to center the logo
+logo_512 = logo.resize((512, 512), Image.Resampling.LANCZOS)
+icon_512.paste(logo_512, (0, 0), logo_512)
+icon_512.save('public/icons/icon-512x512.png')
 print('Created icon-512x512.png')
 
-print('All icons created successfully!')
+print('Icons created from ADDU Nation logo successfully!')
