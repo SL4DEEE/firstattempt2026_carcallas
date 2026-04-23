@@ -12,11 +12,45 @@ To replicate and run this project follow the following steps using Windows Power
 winget install OpenJS.NodeJS.LTS
 nvm install lts
 nvm use lts
-git clone https://github.com/your-username/firstattempt2026_carcallas
-cd vite-project
-npm install
+git clone https://github.com/SL4DEEE/firstattempt2026_carcallas
+cd firstattempt2026_carcallas\vite-project
+git checkout feature/pwa-ready
+npm install --legacy-peer-deps
 npm run dev
 ```
+
+#### Installation Notes
+
+**Why `--legacy-peer-deps`?**
+The `vite-plugin-pwa@1.2.0` was created for Vite 7.x but your project uses Vite 8.x. The `--legacy-peer-deps` flag tells npm to ignore this peer dependency mismatch and install anyway. This is safe and necessary for this project.
+
+**Why `git checkout feature/pwa-ready`?**
+All PWA changes (manifest.json, Service Worker, caching strategies, icons) are on the `feature/pwa-ready` branch. Without checking out this branch, you'll get the pre-PWA version of the app.
+
+**What Gets Downloaded?**
+- ✅ All source code files (.vue, .js, .css)
+- ✅ package.json and package-lock.json
+- ✅ vite.config.js (with PWA config)
+- ✅ index.html (with PWA meta tags)
+- ✅ public/manifest.json (PWA manifest)
+- ✅ public/icons/ (ADDU Nation logos)
+- ✅ .git folder (full commit history)
+- ❌ node_modules/ (reinstalled by `npm install`)
+- ❌ dist/ folder (rebuilt by `npm run build`)
+
+#### Setup on Another Device
+
+If you're cloning this repo on a different device:
+
+```bash
+git clone https://github.com/SL4DEEE/firstattempt2026_carcallas
+cd firstattempt2026_carcallas/vite-project
+git checkout feature/pwa-ready
+npm install --legacy-peer-deps
+npm run dev
+```
+
+The project will be identical to the original, with all PWA features intact.
 
 ### AI Tools:
 1. Claude (Agent Mode) using Haiku 4.5
