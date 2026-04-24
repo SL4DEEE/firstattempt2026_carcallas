@@ -33,6 +33,8 @@ export default defineConfig({
         ]
       },
       workbox: {
+        navigateFallback: '/index.html',
+        navigateFallbackDenylist: [/^\/api\//],
         runtimeCaching: [
           {
             urlPattern: /\.(png|jpg|jpeg|svg|webp|gif)$/i,

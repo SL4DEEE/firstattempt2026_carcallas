@@ -14,7 +14,6 @@ nvm install lts
 nvm use lts
 git clone https://github.com/SL4DEEE/firstattempt2026_carcallas
 cd firstattempt2026_carcallas\vite-project
-git checkout feature/pwa-ready
 npm install --legacy-peer-deps
 npm run dev
 ```
@@ -55,7 +54,16 @@ The project will be identical to the original, with all PWA features intact.
 ### AI Tools:
 1. Claude (Agent Mode) using Haiku 4.5
 
-### Prompt:
+### Prompt 1:
+```
+Create a master prompt for this project based on the following instructions:
+(1) Generating a valid manifest.json (with University Branding).
+(2) Registering a Service Worker.
+(3) Implementing Caching Strategies so the app loads instantly and works offline.
+(4) Managing the App Icons (using the assets provided in the Branding Kit).
+```
+### Prompt 2:
+
 ```
 You are an expert frontend developer. I have a Vite + Vue 3 project using
 JavaScript and the Composition API (<script setup>). Your job is to fully
@@ -100,53 +108,23 @@ throw errors.
 --- TASK 6: Rewrite README.md ---
 Overwrite the entire README.md file using exactly this structure and format:
 
-## [Your Last Name]
-
-#### Framework: Vite + Vue 3
-
-#### Module: PWA Conversion
-
-#### Installation
-
-To replicate and run this project follow the following steps using Windows Powershell:
-
-```bash
-winget install OpenJS.NodeJS.LTS
-nvm install lts
-nvm use lts
-<clone repo link here>
-npm install
-npm run dev
-```
-
-### AI Tools:
-1. Claude (Agent Mode)
-
-### Prompt:
-[Insert the full master prompt that was used to initiate this PWA conversion]
-
-### PWA Conversion Log:
-Files created or modified:
-- public/manifest.json (created)
-- vite.config.js (modified)
-- index.html (modified)
-- public/icons/icon-192x192.png (created)
-- public/icons/icon-512x512.png (created)
-- README.md (modified)
-
-Hallucinations / Manual Fixes:
-- [List any errors or incorrect suggestions made by the AI that had to be fixed manually]
-
 #### Screenshots
-[Place screenshots of the installed PWA and the DevTools Application tab
-inside an /images folder in the root directory and display them here
-using markdown image syntax]
 
---- TASK 7: Verify ---
-After completing all tasks, run: npm run build
-Then confirm the build succeeds and list all PWA-related files generated
-in the dist/ folder (especially the service worker and manifest).
-```
+**Home Page**
+![Home Page](./images/Screenshot%202026-04-24%20024317.png)
+
+**Alumni Network Dashboard**
+![Alumni Network Dashboard](./images/Screenshot%202026-04-24%20024325.png)
+
+**Donation Hub**
+![Donation Hub Page](./images/Screenshot%202026-04-24%20024331.png)
+
+**Career Opportunities**
+![Career Opportunities Dashboard](./images/Screenshot%202026-04-24%20024336.png)
+
+**Academic Records**
+![Academic Records and Documents](./images/Screenshot%202026-04-24%20024342.png)
+
 
 ### PWA Conversion Log:
 
@@ -160,7 +138,7 @@ Files created or modified:
 - `README.md` (modified)
 
 Hallucinations / Manual Fixes:
-- None - All tasks completed successfully without manual fixes required
+- No hallucinations - All tasks completed successfully
 - vite-plugin-pwa installation required `--legacy-peer-deps` flag due to Vite 8.x compatibility
 - Python script approach used for icon generation due to cross-platform compatibility
 
@@ -170,51 +148,7 @@ To build and verify the PWA implementation:
 
 ```bash
 npm run build
-```
-
-The build process will generate:
-- Service Worker file in `dist/`
-- PWA manifest in `dist/manifest.json`
-- All assets with proper caching strategies configured
-
-#### Features Implemented
-
-✅ **PWA Configuration**
-- Manifest.json with ADDU Alumni Connect branding
-- University theme color (#003087) and white background
-- Standalone display mode for app-like experience
-- Auto-update service worker registration
-
-✅ **Icon Management**
-- 192x192 icon for home screens
-- 512x512 icon for splash screens
-- ADDU branding on both icon sizes
-
-✅ **Caching Strategies**
-- **CacheFirst**: Images (PNG, JPG, SVG, WebP) - cached indefinitely with 30-day expiration
-- **StaleWhileRevalidate**: JS and CSS assets - served from cache while updating in background
-
-✅ **Mobile Support**
-- Apple mobile web app capability enabled
-- Apple touch icon configured
-- Theme color meta tag for browser UI customization
-
-#### Running the Application
-
-Development:
-```bash
-npm run dev
-```
-
-Production Build:
-```bash
-npm run build
 npm run preview
 ```
 
-#### Testing PWA Features
 
-1. **Install App**: Look for the install prompt in the browser address bar or app menu
-2. **Offline Functionality**: Open DevTools → Application → Service Workers to verify registration
-3. **Cached Assets**: Check Application → Cache Storage to see cached images and assets
-4. **Manifest**: Verify manifest.json loads correctly in DevTools → Application → Manifest
