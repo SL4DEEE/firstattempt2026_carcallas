@@ -75,47 +75,10 @@ throw errors.
 --- TASK 6: Rewrite README.md ---
 Overwrite the entire README.md file using exactly this structure and format:
 
-## Carcallas
-
-#### Framework: Vite + Vue 3
-
-#### Module: PWA Conversion
-
-#### Installation
-
-To replicate and run this project follow the following steps using Windows Powershell:
-
-```bash
-winget install OpenJS.NodeJS.LTS
-nvm install lts
-nvm use lts
-<clone repo link here>
-npm install
-npm run dev
-```
-
-### AI Tools:
-1. Claude (Agent Mode)
-
-### Prompt:
-[Insert the full master prompt that was used to initiate this PWA conversion]
-
-### PWA Conversion Log:
-Files created or modified:
-- public/manifest.json (created)
-- vite.config.js (modified)
-- index.html (modified)
-- public/icons/icon-192x192.png (created)
-- public/icons/icon-512x512.png (created)
-- README.md (modified)
-
-Hallucinations / Manual Fixes:
-- [List any errors or incorrect suggestions made by the AI that had to be fixed manually]
-
 #### Screenshots
 
-**Home Page - Light Theme with White Background**
-![Home Page ](./images/Screenshot%202026-04-24%20024317.png)
+**Home Page**
+![Home Page](./images/Screenshot%202026-04-24%20024317.png)
 
 **Alumni Network Dashboard**
 ![Alumni Network Dashboard](./images/Screenshot%202026-04-24%20024325.png)
@@ -129,11 +92,6 @@ Hallucinations / Manual Fixes:
 **Academic Records**
 ![Academic Records and Documents](./images/Screenshot%202026-04-24%20024342.png)
 
---- TASK 7: Verify ---
-After completing all tasks, run: npm run build
-Then confirm the build succeeds and list all PWA-related files generated
-in the dist/ folder (especially the service worker and manifest).
-```
 
 ### PWA Conversion Log:
 
@@ -157,51 +115,7 @@ To build and verify the PWA implementation:
 
 ```bash
 npm run build
-```
-
-The build process will generate:
-- Service Worker file in `dist/`
-- PWA manifest in `dist/manifest.json`
-- All assets with proper caching strategies configured
-
-#### Features Implemented
-
-✅ **PWA Configuration**
-- Manifest.json with ADDU Alumni Connect branding
-- University theme color (#003087) and white background
-- Standalone display mode for app-like experience
-- Auto-update service worker registration
-
-✅ **Icon Management**
-- 192x192 icon for home screens
-- 512x512 icon for splash screens
-- ADDU branding on both icon sizes
-
-✅ **Caching Strategies**
-- **CacheFirst**: Images (PNG, JPG, SVG, WebP) - cached indefinitely with 30-day expiration
-- **StaleWhileRevalidate**: JS and CSS assets - served from cache while updating in background
-
-✅ **Mobile Support**
-- Apple mobile web app capability enabled
-- Apple touch icon configured
-- Theme color meta tag for browser UI customization
-
-#### Running the Application
-
-Development:
-```bash
-npm run dev
-```
-
-Production Build:
-```bash
-npm run build
 npm run preview
 ```
 
-#### Testing PWA Features
 
-1. **Install App**: Look for the install prompt in the browser address bar or app menu
-2. **Offline Functionality**: Open DevTools → Application → Service Workers to verify registration
-3. **Cached Assets**: Check Application → Cache Storage to see cached images and assets
-4. **Manifest**: Verify manifest.json loads correctly in DevTools → Application → Manifest
